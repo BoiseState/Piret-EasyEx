@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plannerBenchmark>
+	<benchmarkDirectory>org/boisestate/cs/local/benchmarkResults</benchmarkDirectory>
+	<!--<parallelBenchmarkCount>AUTO</parallelBenchmarkCount>-->
+	<warmUpSecondsSpentLimit>30</warmUpSecondsSpentLimit>
+	
+	<inheritedSolverBenchmark>
+		<problemBenchmarks>
+			<xStreamAnnotatedClass>org.boisestate.cs.BookExchange</xStreamAnnotatedClass>
+			
+			<inputSolutionFile>bookExchangeData-5-5-false-false-1420967166.xml</inputSolutionFile>
+			<inputSolutionFile>bookExchangeData-10-10-false-false-1420967177.xml</inputSolutionFile>
+			<inputSolutionFile>bookExchangeData-100-100-false-false-1420967050.xml</inputSolutionFile>
+			<inputSolutionFile>bookExchangeData-250-250-false-false-1420967094.xml</inputSolutionFile>
+			<inputSolutionFile>bookExchangeData-500-500-false-false-1420967109.xml</inputSolutionFile>
+			
+			<!-- UNCOMMENT FOR BIGGER TESTS -->
+			<!--<inputSolutionFile>bookExchangeData-1000-1000-false-false-1420967126.csv</inputSolutionFile>-->
+			
+			<!-- Other types include WORST_SCORE or TOTAL_RANKING -->
+			<problemStatisticType>BEST_SCORE</problemStatisticType>
+			<!-- <problemStatisticType>STEP_SCORE</problemStatisticType> -->
+			<!-- <problemStatisticType>CALCULATE_COUNT_PER_SECOND</problemStatisticType> -->
+			<!-- <problemStatisticType>BEST_SOLUTION_MUTATION</problemStatisticType> -->
+			<!-- <problemStatisticType>MOVE_COUNT_PER_STEP</problemStatisticType> -->
+			<!-- <problemStatisticType>MEMORY_USE</problemStatisticType> --> 
+			<writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
+		</problemBenchmarks>
+		
+		<solver>
+			<solutionClass>org.boisestate.cs.BookExchange</solutionClass>
+			<entityClass>org.boisestate.cs.User</entityClass>
+			<scoreDirectorFactory>
+				<scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
+				<easyScoreCalculatorClass>org.boisestate.cs.BookExchangeEasyScoreCalculator</easyScoreCalculatorClass>
+				<initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+			</scoreDirectorFactory>
+			<termination>
+				<terminationCompositionStyle>OR</terminationCompositionStyle>
+				<unimprovedMinutesSpentLimit>15</unimprovedMinutesSpentLimit>
+				<hoursSpentLimit>5</hoursSpentLimit>
+				<!--<unimprovedStepCountLimit>100</unimprovedStepCountLimit> -->
+			</termination>
+			<constructionHeuristic>
+				<constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
+			</constructionHeuristic>
+		</solver>
+	</inheritedSolverBenchmark>
+	
+	<!-- Step Counting Hill Climbing -->
+	<!--
+	<solverBenchmark>
+		<name>Step Counting</name>
+		<solver>
+			<localSearch>
+				<changeMoveSelector>
+					<selectionOrder>ORIGINAL</selectionOrder>
+				</changeMoveSelector>
+				<acceptor>
+					<stepCountingHillClimbingSize>400</stepCountingHillClimbingSize>
+				</acceptor>
+				<forager>
+					<acceptedCountLimit>1</acceptedCountLimit>
+					<pickEarlyType>NEVER</pickEarlyType>
+				</forager>
+			</localSearch>
+		</solver>
+	</solverBenchmark>
+	-->
+
+	<!-- Late Acceptance with Tabu Acceptor -->
+	<solverBenchmark>
+		<name>Late Accept. w Tabu</name>
+		<solver>
+			<localSearch>
+				<changeMoveSelector>
+					<selectionOrder>ORIGINAL</selectionOrder>
+				</changeMoveSelector>
+				<acceptor>
+					<lateAcceptanceSize>400</lateAcceptanceSize>
+					<entityTabuSize>5</entityTabuSize>
+				</acceptor>
+				<forager>
+					<acceptedCountLimit>1</acceptedCountLimit>
+					<pickEarlyType>NEVER</pickEarlyType>
+				</forager>
+			</localSearch>
+		</solver>
+	</solverBenchmark>
+	
+	<!-- Late Acceptance -->
+	<!--
+	<solverBenchmark>
+		<name>Late Accept.</name>
+		<solver>
+			<localSearch>
+				<changeMoveSelector>
+					<selectionOrder>ORIGINAL</selectionOrder>
+				</changeMoveSelector>
+				<acceptor>
+					<lateAcceptanceSize>400</lateAcceptanceSize>
+				</acceptor>
+				<forager>
+					<acceptedCountLimit>1</acceptedCountLimit>
+					<pickEarlyType>NEVER</pickEarlyType>
+				</forager>
+			</localSearch>
+		</solver>
+	</solverBenchmark>
+	-->
+	
+	<!-- Simulated Annealing AND Tabu Search -->
+	<solverBenchmark>
+		<name>Sim. Anneal. w Tabu</name>
+		<solver>
+			<localSearch>
+				<changeMoveSelector>
+					<selectionOrder>ORIGINAL</selectionOrder>
+				</changeMoveSelector>
+				<acceptor>
+					<simulatedAnnealingStartingTemperature>1hard/1soft</simulatedAnnealingStartingTemperature>
+					<entityTabuSize>5</entityTabuSize>   
+				</acceptor>
+				<forager>
+					<acceptedCountLimit>1</acceptedCountLimit>
+					<pickEarlyType>NEVER</pickEarlyType>
+					</forager>
+			</localSearch>
+		</solver>
+	</solverBenchmark>
+	
+	<!-- Simulated Annealing. Change acceptedCountLimit to 4 for fine tuning possibly -->
+	<!--
+	<solverBenchmark>
+		<name>Sim. Anneal.</name>
+		<solver>
+			<localSearch>
+				<changeMoveSelector>
+					<selectionOrder>ORIGINAL</selectionOrder>
+				</changeMoveSelector>
+				<acceptor>
+					<simulatedAnnealingStartingTemperature>1hard/1soft</simulatedAnnealingStartingTemperature>
+				</acceptor>
+				<forager>
+					<acceptedCountLimit>1</acceptedCountLimit>
+					<pickEarlyType>NEVER</pickEarlyType>
+				</forager>
+			</localSearch>
+		</solver>
+	</solverBenchmark>
+	-->
+	
+	<!-- Tabu Search. Recommended Type -->
+	<solverBenchmark>
+		<name>Tabu Search</name>
+		<solver>
+			<localSearch>
+				<changeMoveSelector>
+					<selectionOrder>ORIGINAL</selectionOrder>
+				</changeMoveSelector>
+				<acceptor>
+					<entityTabuSize>7</entityTabuSize>
+					<!-- Other Tabu Settings to Tweak or Test
+					<entityTabuRatio>0.02</entityTabuRatio>
+					<valueTabuSize>7</valueTabuSize>
+					<valueTabuRatio>0.02</valueTabuRatio>
+					<moveTabuSize>7</moveTabuSize>
+					<undoMoveTabuSize>7</undoMoveTabuSize>
+					<solutionTabuSize>1000</solutionTabuSize>
+					-->
+				</acceptor>
+				<forager>
+					<acceptedCountLimit>1000</acceptedCountLimit>
+					<pickEarlyType>NEVER</pickEarlyType>
+				</forager>
+			</localSearch>
+		</solver>
+	</solverBenchmark>
+	
+	<!-- Hill Climbing. Not Recommended! -->
+	<solverBenchmark>
+		<name>Hill Climbing</name>
+		<solver>
+			<localSearch>
+				<changeMoveSelector>
+					<selectionOrder>ORIGINAL</selectionOrder>
+				</changeMoveSelector>
+				<acceptor>
+					<acceptorType>HILL_CLIMBING</acceptorType>
+				</acceptor>
+				<forager>
+					<acceptedCountLimit>1000</acceptedCountLimit>
+					<pickEarlyType>NEVER</pickEarlyType>
+				</forager>
+			</localSearch>
+		</solver>
+	</solverBenchmark>
+	
+</plannerBenchmark>

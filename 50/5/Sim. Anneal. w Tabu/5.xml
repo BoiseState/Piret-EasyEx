@@ -1,0 +1,114 @@
+<BookExchange id="1">
+  <bookList id="2">
+    <Book id="3">
+      <bookId>20264852</bookId>
+      <userHappynessMap id="4">
+        <entry>
+          <int>138124</int>
+          <double>3.786</double>
+        </entry>
+        <entry>
+          <int>22521</int>
+          <double>3.925</double>
+        </entry>
+        <entry>
+          <int>86720</int>
+          <double>3.881</double>
+        </entry>
+        <entry>
+          <int>208568</int>
+          <double>3.648</double>
+        </entry>
+      </userHappynessMap>
+    </Book>
+    <Book id="5">
+      <bookId>61020699</bookId>
+      <userHappynessMap id="6"/>
+    </Book>
+    <Book id="7">
+      <bookId>27109917</bookId>
+      <userHappynessMap id="8">
+        <entry>
+          <int>138124</int>
+          <double>2.37</double>
+        </entry>
+        <entry>
+          <int>86720</int>
+          <double>2.465</double>
+        </entry>
+        <entry>
+          <int>75591</int>
+          <double>2.735</double>
+        </entry>
+      </userHappynessMap>
+    </Book>
+    <Book id="9">
+      <bookId>3252531</bookId>
+      <userHappynessMap id="10">
+        <entry>
+          <int>22521</int>
+          <double>3.453</double>
+        </entry>
+        <entry>
+          <int>86720</int>
+          <double>3.41</double>
+        </entry>
+        <entry>
+          <int>75591</int>
+          <double>3.68</double>
+        </entry>
+        <entry>
+          <int>208568</int>
+          <double>3.177</double>
+        </entry>
+      </userHappynessMap>
+    </Book>
+    <Book id="11">
+      <bookId>60502258</bookId>
+      <userHappynessMap id="12">
+        <entry>
+          <int>138124</int>
+          <double>3.623</double>
+        </entry>
+        <entry>
+          <int>22521</int>
+          <double>3.759</double>
+        </entry>
+        <entry>
+          <int>75591</int>
+          <double>3.988</double>
+        </entry>
+        <entry>
+          <int>208568</int>
+          <double>3.484</double>
+        </entry>
+      </userHappynessMap>
+    </Book>
+  </bookList>
+  <userList id="13">
+    <User id="14">
+      <userId>138124</userId>
+      <book reference="11"/>
+    </User>
+    <User id="15">
+      <userId>22521</userId>
+      <book reference="3"/>
+    </User>
+    <User id="16">
+      <userId>86720</userId>
+      <book reference="7"/>
+    </User>
+    <User id="17">
+      <userId>75591</userId>
+      <book reference="9"/>
+    </User>
+    <User id="18">
+      <userId>208568</userId>
+      <book reference="5"/>
+    </User>
+  </userList>
+  <score id="19">
+    <hardScore>0</hardScore>
+    <softScore>273</softScore>
+  </score>
+</BookExchange>

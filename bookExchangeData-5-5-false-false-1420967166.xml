@@ -1,0 +1,110 @@
+<org.boisestate.cs.BookExchange id="1">
+  <bookList id="2">
+    <org.boisestate.cs.Book id="3">
+      <bookId>6</bookId>
+      <userHappynessMap id="4"/>
+    </org.boisestate.cs.Book>
+    <org.boisestate.cs.Book id="5">
+      <bookId>9</bookId>
+      <userHappynessMap id="6">
+        <entry>
+          <int>1</int>
+          <double>0.25</double>
+        </entry>
+        <entry>
+          <int>19</int>
+          <double>0.58</double>
+        </entry>
+        <entry>
+          <int>13</int>
+          <double>0.07</double>
+        </entry>
+        <entry>
+          <int>14</int>
+          <double>0.66</double>
+        </entry>
+      </userHappynessMap>
+    </org.boisestate.cs.Book>
+    <org.boisestate.cs.Book id="7">
+      <bookId>13</bookId>
+      <userHappynessMap id="8">
+        <entry>
+          <int>2</int>
+          <double>0.55</double>
+        </entry>
+        <entry>
+          <int>19</int>
+          <double>0.67</double>
+        </entry>
+        <entry>
+          <int>13</int>
+          <double>0.63</double>
+        </entry>
+        <entry>
+          <int>14</int>
+          <double>0.02</double>
+        </entry>
+      </userHappynessMap>
+    </org.boisestate.cs.Book>
+    <org.boisestate.cs.Book id="9">
+      <bookId>14</bookId>
+      <userHappynessMap id="10">
+        <entry>
+          <int>1</int>
+          <double>0.12</double>
+        </entry>
+        <entry>
+          <int>2</int>
+          <double>0.33</double>
+        </entry>
+        <entry>
+          <int>19</int>
+          <double>0.09</double>
+        </entry>
+        <entry>
+          <int>14</int>
+          <double>0.49</double>
+        </entry>
+      </userHappynessMap>
+    </org.boisestate.cs.Book>
+    <org.boisestate.cs.Book id="11">
+      <bookId>15</bookId>
+      <userHappynessMap id="12">
+        <entry>
+          <int>1</int>
+          <double>0.68</double>
+        </entry>
+        <entry>
+          <int>2</int>
+          <double>0.69</double>
+        </entry>
+        <entry>
+          <int>13</int>
+          <double>0.5</double>
+        </entry>
+      </userHappynessMap>
+    </org.boisestate.cs.Book>
+  </bookList>
+  <userList id="13">
+    <org.boisestate.cs.User id="14">
+      <userId>1</userId>
+      <book reference="11"/>
+    </org.boisestate.cs.User>
+    <org.boisestate.cs.User id="15">
+      <userId>2</userId>
+      <book reference="5"/>
+    </org.boisestate.cs.User>
+    <org.boisestate.cs.User id="16">
+      <userId>19</userId>
+      <book reference="7"/>
+    </org.boisestate.cs.User>
+    <org.boisestate.cs.User id="17">
+      <userId>13</userId>
+      <book reference="3"/>
+    </org.boisestate.cs.User>
+    <org.boisestate.cs.User id="18">
+      <userId>14</userId>
+      <book reference="9"/>
+    </org.boisestate.cs.User>
+  </userList>
+</org.boisestate.cs.BookExchange>

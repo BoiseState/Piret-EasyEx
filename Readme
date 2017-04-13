@@ -1,0 +1,36 @@
+# EasyEx
+## Maria Soledad Pera and Yiu-Kai Ng
+
+
+Tools needed:
+* Lenskit -- http://lenskit.org/
+* Optaplaner -- https://www.optaplanner.org/
+* A tool capaple of running a regression, such as R. -- https://www.r-project.org/
+* BookXing dataset -- http://www2.informatik.uni-freiburg.de/~cziegler/BX/
+
+Description of files:
+
+* bookExchangeBenchmarkConfig.xml -- Configuration file for Optaplaner benchmarker.
+* bookExchangeData-5-5-false-false-1420967166.csv -- Sample input file for optaplaner, before conversion.
+* bookExchangeData-5-5-false-false-1420967166.xml -- Sample input file for optaplaner.
+* bookExchangeSolverConfig.xml -- Configuration file for Optaplaner constraint solver.
+* BookExchangingGenerator.java -- An script that generates optaplaner input files given a Lenskit output csv file.
+* eval.groovy -- Configuration file for Lenskit.
+* GeneratePossibleExchanges.java -- Generates possible exchanges from a file with users and items
+* exchangeInput.csv -- Input for GeneratePossibleExchanges.java
+* exchangeOutput.csv -- Output for GeneratePossibleExchanges.java
+* BookExchangingGenerator.java -- Takes user item pairs and generates all exchange possibilities
+* Readme -- This file.
+
+
+Steps for running the experiment:
+
+* Download and prepare Book-Xing dataset for Lenskit
+* Run Lenskit with eval.groovy configuration file.
+* Run a regression model and generate a file with <user,item,regressionRating> format
+* Generate possible exchanges using GeneratePossibleExchanges.java
+* Convert output using BookExchangingGenerator.java
+* Run the file in Optaplaner using bookExhangeSolverConfig.xml config file.
+* Analyze results
+
+
